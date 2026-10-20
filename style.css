@@ -1,0 +1,263 @@
+:root {
+  --purple-1: #667eea;
+  --purple-2: #764ba2;
+  --purple-3: #4a3a7a;
+  --purple-4: #2a1a4a;
+
+  --bg: #ffffff;
+  --text: #333;
+  --card-bg: #f5f5f5;
+  --border: #e0e0e0;
+  --muted: #888;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.section {
+  max-width: 1000px;          
+  margin: 0 auto 20px;        
+  padding: 30px 40px;              
+  background: var(--card-bg);
+  border-radius: 12px;       
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--purple-1);
+}
+
+.theme-btn {
+  background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.theme-btn:hover {
+  opacity: 0.85;
+}
+
+.banner {
+  background: linear-gradient(135deg, var(--purple-1), var(--purple-2));        
+  color: white;              
+  padding: 60px 20px;             
+  text-align: center; 
+  transition: background 0.3s;         
+}
+
+.banner img {
+  max-width: 300px;           
+  height: auto;
+  border-radius: 12px;       
+  margin-bottom: 20px;       
+}
+
+.banner-title {
+  font-size: 42px;           
+  margin-bottom: 15px;       
+}
+
+.server-info {
+  display: flex;             
+  justify-content: center;    
+  gap: 30px;                 
+  flex-wrap: wrap;           
+  font-size: 16px;           
+}
+
+.coins-form {
+  display: flex;             
+  gap: 10px;                
+}
+
+.coins-form input {
+  flex: 1;                 
+  padding: 12px 16px;              
+  border: 1px solid var(--border);              
+  border-radius: 8px;        
+  font-size: 15px;           
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.coins-form input:focus {
+  border-color: var(--purple-1);         
+}
+
+.coins-form button { 
+  background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+  color: white;
+  border: none;
+  padding: 12px 24px; 
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s;          
+}
+
+.social-list {
+  display: flex;            
+  gap: 15px;                 
+  flex-wrap: wrap;          
+}
+
+.social-list a {
+  padding: 10px 20px;             
+  background: var(--purple-1);         
+  color: white;                
+  border-radius: 8px;       
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.social-list a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(102, 126, 234, 0.35);
+}
+
+.footer {
+  text-align: center;         
+  padding: 20px;           
+  color: var(--muted);  
+  background: black;      
+  font-size: 13px;           
+}
+
+.rules ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rules li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.rules h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: var(--purple-1);
+}
+
+.punishment {
+  display: block;
+  margin-top: 5px;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+body.dark {
+  --bg: #1a1a1a;
+  --text: #e0e0e0;
+  --card-bg: #2a2a2a;
+  --border: #333;
+  --muted: #888;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .banner {
+  background: linear-gradient(135deg, var(--purple-3), var(--purple-4));
+  transition: background 0.3s;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .nav {
+    gap: 8px;
+  }
+  
+  .nav a {
+    font-size: 12px;
+  }
+  
+  .logo {
+    font-size: 14px;
+  }
+  
+  .theme-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .banner {
+    padding: 40px 20px;              /* 40px 20px */
+  }
+  
+  .banner-title {
+    font-size: 28px;            /* 28px */
+  }
+  
+  .server-info {
+    flex-direction: column;       /* column */
+    gap: 10px;                  /* 10px */
+  }
+  
+  .section {
+    padding: 20px;              /* 20px */
+  }
+  
+  .coins-form {
+    flex-direction: column;       /* column */
+  }
+
+  .banner img {
+    max-width: 150px;
+  }
+
+  .banner-title {
+    font-size: 24px;
+  }
+}
