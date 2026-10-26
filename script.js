@@ -37,15 +37,34 @@ if (localStorage.getItem("theme") === "dark") {
   themeBtn.textContent = "🌞"; 
 } 
 
-setTimeout(function() {
-  let fakeBalance = Math.floor(Math.random() * 4900) + 100;
+myForm.addEventListener("submit", function(event) {
+  event.preventDefault(); 
+  coinsResult.classList.remove('error', 'success');
+  
+  let nickname = nicknameInput.value.trim();
 
-  coinsResult.textContent = "Баланс: " + fakeBalance;
-  coinsResult.classList.add('success');
+  
+  if (nickname === "") {
+    coinsResult.textContent = "Введите ник!";
+    coinsResult.classList.add('error'); 
+    return; 
+  }
 
-  checkBtn.disabled = false; 
-  checkBtn.textContent = "Проверить";
-}, 800);
+  
+  checkBtn.disabled = true; 
+  checkBtn.textContent = "Загрузка..."; 
+
+  
+  setTimeout(function() {
+    let fakeBalance = Math.floor(Math.random() * 4900) + 100;
+    
+    coinsResult.textContent = "Баланс: " + fakeBalance;
+    coinsResult.classList.add('success');
+    
+    checkBtn.disabled = false; 
+    checkBtn.textContent = "Проверить";
+  }, 800);
+});
   
 /*
 myForm.addEventListener("submit", function(event) {
