@@ -37,7 +37,17 @@ if (localStorage.getItem("theme") === "dark") {
   themeBtn.textContent = "🌞"; 
 } 
 
+setTimeout(function() {
+  let fakeBalance = Math.floor(Math.random() * 4900) + 100;
 
+  coinsResult.textContent = "Баланс: " + fakeBalance;
+  coinsResult.classList.add('success');
+
+  checkBtn.disabled = false; 
+  checkBtn.textContent = "Проверить";
+}, 800);
+  
+/*
 myForm.addEventListener("submit", function(event) {
   event.preventDefault(); 
   coinsResult.classList.remove('error', 'success');
@@ -82,6 +92,7 @@ myForm.addEventListener("submit", function(event) {
 
 
 });
+*/
 
 coinsSlid.addEventListener("input", function() {
   let currentCoins = coinsSlid.value;
@@ -111,6 +122,12 @@ coinsInp.addEventListener("change", function() {
   totalPrice.textContent = currentCoins;
 });
 
+setTimeout(function() {
+  let fakeOnline = Math.floor(Math.random() * 21) + 5;
+  onlineCount.textContent = fakeOnline;
+}, 1000);
+
+/*
 fetch("http://localhost:3000/api/online")
   .then(function(response) {
     return response.json(); 
@@ -121,7 +138,7 @@ fetch("http://localhost:3000/api/online")
   .catch(function(error) {
     console.error("Ошибка онлайна:", error);
 });
-
+*/
 
 buyBtn.addEventListener("click", function(event) {
   let amount = coinsSlid.value;
