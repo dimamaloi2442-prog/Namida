@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>namida</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,84 +15,218 @@
       <a href="#rules">Правила</a>
       <a href="#socials">Соц.Сети</a>
     </nav>
-    <button class="theme-btn">Тема</button>
+    <button class="theme-btn">🌙</button>
   </header>
 
   <main>
 
     <section class="banner">
-      <img src="img/ава.jpg" alt="">
-      <h1 class="banner-title">namida</h1>
-      <div class="server-info">
-        <p>IP: <span id="ip">namida.mclan.ru</span></p>
-        <p>Версия: <span class="version">1.21.4+</span></p>
-        <p>Онлайн: <span class="online" id="online-count">-</span></p>
+      <div class="banner-container">
+        <img src="img/logo_n_transparent.png" alt="Логотип" class="banner-logo">
+        <div class="banner-info">
+          <h1 class="banner-title">namida</h1>
+          <div class="server-info">
+            <p>IP: <button id="ip-copy-btn" class="ip-btn" title="Нажмите, чтобы скопировать"> namida.mclan.ru</button></p>
+            <p>Версия: <span class="version">1.21.4+</span></p>
+            <p>Онлайн: <span class="online" id="online-count">-</span></p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section coins">
+    <section class="section coins fade-in">
       <h2>Проверить Namcoins</h2>
       <form class="coins-form" id="coins-form">
-        <input type="text" id="nickname" placeholder="Введите ник" required>
-        <button type="submit">Проверить</button>
+        <input type="text" id="nickname" placeholder="Введите ник">
+        <button type="submit" id="check-btn">Проверить</button>
       </form>
       <p id="coins-result"></p>
     </section>
 
-    <section class="section about" id="about">
+    <section class="section buy-coins" id="buy-coins">
+      <h2>Купить namcoins</h2>
+
+      <div class="buy-container fade-in">
+        <div class="slider-wrapper">
+          <label for="coins-input">Выберите количество:</label>
+
+          <input type="number" id="coins-input" min="100" max="10000" step="1" value="1000">
+
+          <input type="range" id="coins-slider" min="100" max="10000" step="1" value="1000">
+        </div>
+        
+        <div class="buy-checkout">
+          <p class="price-tag">Итого: <span id="total-price">1000</span> ₽</p>
+          <button  type="button" class="buy-btn" id="buy-btn">Купить</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section recent-buys fade-in" id="recent-buys">
+      <h2>Недавно купили</h2>
+      <p class="recent-subtitle">когда-нибудь и у нас так будет...</p>
+      <div class="buys-list" id="buys-list">
+
+      </div>
+    </section>
+    
+    <section class="section about fade-in" id="about">
       <h2>О сервере</h2>
-      <p>Тут рассказ о сервере...</p>
+      <p>🌸  namida  — твой сервер, твоя атмосфера!
+      Залетай на наш сервер, находи новых друзей, участвуй в розыгрышах и становись частью дружного сообщества! 💗  У нас тебя ждут общение, активность и много интересного.</p>
+
+      <p>
+        ✨ namida — присоединяйся к нам!
+      </p>
     </section>
 
-    <section class="section rules" id="rules">
-      <h2>Правила</h2>
+    <section class="section rules fade-in" id="rules">
+      <h2>☆ Правила проекта namida ☆</h2>
+      
+      <div class="rule-category">
+        <h3 class="rule-header">❗ Общие правила сервера ❗</h3>
+        <ul class="rule-list">
+          <li><strong>0.1</strong> — Вы автоматически соглашаетесь со всеми правилами проекта: «незнание правил не освобождает от ответственности».</li>
+          <li><strong>0.2</strong> — Администрация вправе выдавать вам наказание не в рамках правил и времени.</li>
+          <li><strong>0.3</strong> — При нарушении правил вы несёте за это ответственность, не администрация.</li>
+          <li><strong>0.4</strong> — Деньги, потраченные вами на валюту NAMCOINS и на Донат-Привилегии, — НЕ ВОЗВРАЩАЮТСЯ!!!</li>
+          <li><strong>0.5</strong> — Администрация вправе изменить свод правил в любое время, и если вы это не углядели — ваша проблема.</li>
+        </ul>
+      </div>
+      
+      <div class="rule-category">
+        <h3 class="rule-header">🔇 Правила, которые караются МУТОМ 🔇</h3>
+        <ul class="rule-list">
+          <li><strong>1.1</strong> — Запрещено злоупотребление оскорблений в сторону игрока, но в это сведение правил не входят: езз, руки не из того места растут, 0, чинить пинг тебе надо, еззочка, L, нуб, ньюген и т.д.
+            <span class="punishment">• Мут 15 минут</span>
+            <span class="punishment-report">• Мут по жалобе 30 минут</span>
+          </li>
+          <li><strong>1.2</strong> — Запрещён любой вид флуда. Флуд — сообщение, занимающее МНОГО МЕСТА. Пример: привееееееееееееееееееееееееееееееееееееееееееееееееееееет.
+            <span class="punishment">• Мут 1 минута</span>
+            <span class="punishment-report">• Мут по жалобе 30 минут</span>
+          </li>
+          <li><strong>1.3</strong> — Запрещён любой вид спама. Спам — повторяющиеся сообщения, отправление которых больше 5 и более за короткий срок. Исключение: какой-либо отчёт, PvP, раздачи и т.д.
+            <span class="punishment">• Мут 15 минут</span>
+            <span class="punishment-report">• Мут по жалобе 30 минут</span>
+          </li>
+          <li><strong>1.4</strong> — Неадекватное поведение/высказывания — к неадекватному поведению/высказываниям относятся не принятые нормам действия в обществе и в диалоге, общении.
+            <span class="punishment">• Мут 30 минут</span>
+            <span class="punishment-report">• Мут по жалобе 1 час</span>
+          </li>
+          <li><strong>1.5</strong> — Провокационные высказывания — любые высказывания и действия, которые могут заставить/побудить игрока принять какое-либо решение, спровоцированное вашим поведением. Пример: передай маме/папе привет и т.д.
+            <span class="punishment">• Мут 30 минут</span>
+            <span class="punishment-report">• Мут по жалобе 1 час</span>
+          </li>
+          <li><strong>1.6</strong> — Неуважительное отношение к администрации — любой троллинг, шутливое оскорбление, прямое оскорбление и другое любое ненормальное поведение. Администрация — ваш друг, который ответит на ваш вопрос/решит вашу проблему, с администрацией нужно вести себя уважительно.
+            <span class="punishment">• Мут 1 час</span>
+            <span class="punishment-report">• Мут по жалобе 3 часа </span>
+          </li>
+          <li><strong>1.7</strong> — Запрещено разжигание межнациональной розни — любое оскорбление и действие, желающее задеть национальность игрока.
+            <span class="punishment">• Мут 30 минут</span>
+            <span class="punishment-report">• Мут по жалобе 1 час</span>
+          </li>
+          <li><strong>1.8</strong> — Запрещено оскорбление кровной родни администрации проекта.
+            <span class="punishment">• Мут 4 часа</span>
+            <span class="punishment-report">• Мут по жалобе 12 часов</span>
+          </li>
+          <li><strong>1.9</strong> — Запрещено злоупотребление CapsLock’ом (от 5 и более сообщений подряд).
+            <span class="punishment">• Мут 30 минут</span>
+            <span class="punishment-report">• Мут по жалобе 1 час</span>
+          </li>
+          <li><strong>1.10</strong> — Запрещены любые оскорбления на табличках.
+            <span class="punishment">• Мут 15 минут</span>
+            <span class="punishment-report">• Мут по жалобе 30 минут</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="rule-category">
+        <h3 class="rule-header">⛔ Правила, которые караются БАНОМ ⛔</h3>
+        <ul class="rule-list">
+          <li><strong>2.1</strong> — Запрещён любой вид гриферства как самого сервера, так и игровых режимов. Пример: ломать спавн, залить спавн лавой, водой, сжигать дома игроков и т.д.
+            <span class="punishment">• Бан 1 день</span>
+            <span class="punishment-report">• Бан по жалобе 3 дня</span>
+          </li>
+          <li><strong>2.2</strong> — Запрещена постройка половых органов.
+            <span class="punishment">• Бан 6 часов</span>
+            <span class="punishment-report">• Бан по жалобе 12 часов</span>
+          </li>
+          <li><strong>2.3</strong> — Запрещена постройка любых лаг-машин — лаг-машины, которые могут привести к крашу/лагу сервера.
+            <span class="punishment">• Бан 7 дней</span>
+            <span class="punishment-report">• Бан по жалобе 14 дней</span>
+          </li>
+          <li><strong>2.4</strong> — Запрещены любые способы обхода наказаний — любой обход наказания: мута/бана. При многочисленных обходах наказаний выдаётся: ЧС «Чёрный список проекта».
+            <span class="punishment">• Бан 30 дней</span>
+            <span class="punishment-report">• Бан по жалобе 60 дней</span>
+          </li>
+          <li><strong>2.5</strong> — Запрещены любые виды читов/макросов/автокликеров/хитбоксов/сторонних чит-клиентов и т.д.
+            <span class="punishment">• Бан 30 дней</span>
+            <span class="punishment-report">• Бан по жалобе: 90 дней</span>
+          </li>
+          <li><strong>2.6</strong> — Запрещены игровые никнеймы, в которых пропагандируется нацизм, нецензурная брань, угрозы и т.д.
+            <span class="punishment">• Бан 90 дней</span>
+            <span class="punishment-report">• Бан по жалобе: 180 дней</span>
+          </li>
+          <li><strong>2.7</strong> — Запрещены скины, пропагандирующие нацизм, 18+, маты и т.д.
+            <span class="punishment">• Бан 1 день</span>
+            <span class="punishment-report">• Бан по жалобе: 7 дней</span>
+          </li>
+          <li><strong>2.8</strong> — Запрещена передача аккаунта 3-им лицам (1 лицо — вы, 2 — сервер, 3 — иные лица).
+            <span class="punishment">• Бан 30 дней</span>
+            <span class="punishment-report">• Бан по жалобе: 90 дней</span>
+          </li>
+          <li><strong>2.9</strong> — Запрещена продажа внутриигровой валюты сервера за реальные деньги (NAMCOINS и игровая валюта режимов).
+            <span class="punishment">• Бан 30 дней</span>
+            <span class="punishment-report">• Бан по жалобе: 90 дней</span>
+          </li>
+          <li><strong>2.10</strong> — Запрещено распространение личной информации игроков и администрации в любом чате (обычном, Донат-Чате (/dc), ТГКаналах и т.д.).
+            <span class="punishment">• Бан 180 дней + ЧСП</span>
+            <span class="punishment-report">• Бан по жалобе: 360 дней + ЧСП</span>
+          </li>
+          <li><strong>2.11</strong> — Запрещена помеха игровому процессу игроков и администрации.
+            <span class="punishment">• Бан 15 минут</span>
+            <span class="punishment-report">• Бан по жалобе: 1 час</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="rule-category">
+        <h3 class="rule-header">🛏️ Правила на режиме BedWars FFA 🛏️</h3>
+        <ul class="rule-list">
+          <li><strong>3.1</strong> — Запрещён любой вид тимерства игроков.
+            <span class="punishment">• Бан 15 минут</span>
+            <span class="punishment-report">• Бан по жалобе 30 минут</span>
+          </li>
+          <li><strong>3.2</strong> — Запрещена накрутка игровой статистики (скидывать свой твинк-аккаунт/аккаунт друга, получая за это монеты и опыт).
+            <span class="punishment">• Бан на 3 дня + обнуление статистики на режиме</span>
+            <span class="punishment-report">• Бан по жалобе 7 дней + обнуление статистики на режиме</span>
+          </li>
+        </ul>
+      </div>
 
-      <h3>Основные правила</h3>
-      <ul>
-        <li><strong>1.1</strong> - Запрещены ники, содержащие нецензурные выражения, сексуальный подтекст, расизм, нацизм и схожесть с персоналом. <span class="punishment">Наказание: Бан навсегда.</span></li>
-        <li><strong>1.2</strong> - Запрещены некорректные скины/плащи. <span class="punishment">Наказание: Бан на 8 часов.</span></li>
-        <li><strong>1.3</strong> - Запрещено причинять вред серверу и его онлайну. <span class="punishment">Наказание: Бан навсегда.</span></li>
-        <li><strong>1.4</strong> - Запрещена продажа игровых ценностей за реальные деньги. <span class="punishment">Наказание: Бан навсегда.</span></li>
-        <li><strong>1.5</strong>- Запрещена передача или продажа аккаунта третьим лицам (Первое лицо - вы, второе лицо - сервер, третье лицо - другие игроки). <span class="punishment">Наказание: Бан навсегда.</span></li>
-      </ul>
+      <div class="rule-category">
+        <h3 class="rule-header">🎙️ Правила Voice-Чата 🎙️</h3>
+        <ul class="rule-list">
+          <li><strong>4.1</strong> — Запрещено использовать программы для изменения голоса в плохом качестве/неразборчивой речи.
+            <span class="punishment">• Мут 15 минут</span>
+            <span class="punishment-report">• Мут по жалобе 30 минут</span>
+          </li>
+          <li><strong>4.2</strong> — Запрещено намеренное создание посторонних шумов (любые отвлекающие звуки: громкая музыка, громкие звуки, шуршание, громкий телевизор на фоне и т.д.).
+            <span class="punishment">• Мут 15 минут</span>
+            <span class="punishment-report">• Мут по жалобе 30 минут</span>
+          </li>
+        </ul>
+      </div>
 
-      <h3>Правила чата</h3>
-      <ul>
-        <li><strong>2.1</strong> - Запрещается использовать ненормативную лексику. <span class="punishment"> Наказание: Мут на 30 минут.</span></li>
-        <li><strong>2.2</strong> - Запрещается оскорблять игроков. <span class="punishment">Наказание: Мут на 12 часов.</span></li>
-        <li><strong>2.2.1</strong>  - Запрещено упоминать родителей в оскорбительной форме.<span class="punishment"> Наказание: Мут на 24 часа.</span></li>
-        <li><strong>2.2.2</strong> - Запрещено оскорблять персонал сервера. <span class="punishment">Наказание: Мут на 12 часов. Если игрок упомянул родителей</span></li>
-        <li><strong>2.2.3</strong> - Запрещено оскорбление администрации (куратор и выше) <span class="punishment">Наказание: Мут на 24 часа.</span></li>
-        <li><strong>2.3</strong> - Запрещён флуд, спам и мультифлуд в ЛЮБОЙ форме: Спам начинается от 3-х одинаковых сообщений. Флуд (бессмысленный набор букв и/или цифр) начинается от 10-ти символов. Мультиспам начинается от 5-ти неодинаковых сообщений (если игрока никто не перебивал). <span class="punishment">Наказание: Мут на 30 минут.</span></li>
-        <li><strong>2.3.1</strong> - Запрещена провокация игроков на флуд/спам: Пример нарушения: "Кто пати пиши я; кто гей пиши я" - провокация. <span class="punishment">Наказание: Мут на 1 час.</span></li>
-        <li><strong>2.4</strong> - Запрещено использование верхнего регистра (Caps Lock): Нарушение правила начинается от написания 3-х и более слов верхним регистром. <span class="punishment">Наказание: Мут 15 минут.</span></li>
-        <li><strong>2.5</strong> - Запрещено попрошайничество чего либо существующего на сервере у персонала: Пример нарушения: "Хелпер, дай намкоинов; персонал, дайте монет на режиме". <span class="punishment">Наказание: Мут на 30 минут.</span></li>
-        <li><strong>2.6</strong> - Запрещена реклама сторонних проектов/сайтов/источников, которые не имеют отношение к нашему проекту: Примерами нарушения являются: Упоминание каналов (ютуб, твич, тк и т.п.); ссылки на другие сайты, каналы и IP-адреса сторонних серверов (если они нелицензионные). <span class="punishment">Наказание: Мут на 12 часов.</span></li>
-        <li><strong>2.7</strong> - Запрещено обсуждение политики/религии, а так же разжигание политических, межнациональных и религиозных конфликтов.</li>
-        <li><strong>2.7.1</strong> - Запрещена дискриминация по полу, расе, сексуальной ориентации, национальности и инвалидности. <span class="punishment">Наказание: Мут на 6 часов.</span></li>
-        <li><strong>2.8</strong> - Запрещено выдавать себя за персонал проекта. <span class="punishment">Наказание: Мут на 2 часа.</span></li>
-        <li><strong>2.9</strong> - Запрещено неконструктивное высказывание критики в сторону проекта. <span class="punishment">Наказание: Мут на 24 часа.</span></li>
-        <li><strong>2.10</strong> - Запрещено распространение личной информации игрока/персонала без его соглашения. <span class="punishment">Наказание: Бан навсегда с занесением вашей личности в чёрный список проекта (ЧСП)</span></li>
-      </ul>
-
-      <h3>Правила игрового процесса</h3>
-      <ul>
-        <li><strong>3.1</strong>- Запрещено хранение/использование стороннего ПО, которое даёт преимущество над другими игроками: Вы должны написать свой дискорд человеку, который вызвал вас на проверку. На это у вас есть 5 минут. Проверка на обнаружение стороннего ПО ведётся ИСКЛЮЧИТЕЛЬНО через AnyDesk.  Отмазки по типу: "Я вам не доверяю" "Везде всегда проверяли через демку в дискорд" - НЕ работают. На нашем проекте проверка ведется только через AnyDesk, поймите это. Отказ от проверки (игнорирование, выход с сервера) - недопустимо. Хранение ПО, которое было изменено менее 8-ми дней назад - всё так-же хранение ПО. <span class="punishment">Наказание (с учётом отказа): Бан на 45 дней. Если вы признаетесь в том, что вы используете стороннее ПО, то вы будете забанены на 8 дней.</span></li>
-        <li><strong>3.1.1</strong>- Запрещено распространение читов в любом месте, в любой форме. <span class="punishment">Наказание: Бан на 15 дней.</span></li>
-        <li><strong>3.2</strong> - Запрещено получение статистики нечестным путём (фарм): За фарм считается убийство одного и того же игрока на его базе/спавна более 5-ти раз. <span class="punishment">Наказание: Бан на 7 дней + обнуление статистики на режиме.</span></li>
-        <li><strong>3.3</strong> - Запрещено объединение в команды игроков в BedWars Solo/Doubles. <span class="punishment">Наказание: Бан на 4 часа.</span></li>
-        <li><strong>3.4</strong> - Запрещена помеха игровому процессу, а также препятствовать нормальной игре в командных режимах. Примеры нарушений: Затягивание игры, стройка столбов, выход за сеунду до запуска игры, тим гриф. <span class="punishment">Наказание: Бан на 3 дня.</span></li>
-        <li><strong>3.5</strong> - Запрещено обходить блокировку аккаунта через VPN или с помощью альтернативного аккаунта (твинка).  <span class="punishment">Наказание: Бан на оставшийся срок наказания основного аккаунта.</span></li>
-        <li><strong>3.6</strong> - Запрещено построение нецензурных построек: Половые органы, свастики, коловраты и т.п. <span class="punishment">Наказание: Бан на 1 день.</span></li>
-      </ul>
     </section>
 
-    <section class="section socials" id="socials">
+    <section class="section socials fade-in" id="socials">
       <h2>Мы в Соц.Сетях</h2>
       <div class="social-list">
-        <a href="#">Discord</a>
-        <a href="#">Telegram</a>
-        <a href="#">YouTube</a>
+        <a href="https://discord.gg/4XXtfCqzb">Discord</a>
+        <a href="https://t.me/namida_mcserver">Telegram</a>
+        <a href="https://youtube.com/@6om6actep_b_pvp?si=qdshUdTuiawWiQ3i">YouTube</a>
+        <a href="https://www.tiktok.com/#namida.server.mc?_r=1&_tZG-9Aqf1kbQi81">TikTok</a>
       </div>
     </section>
 
@@ -100,6 +235,41 @@
   <footer class="footer">
     <p>© 2026 namida</p>
   </footer>
+  
+
+  <div class="modal-overlay" id="buy-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-icon">💰</div>
+          <div>
+            <p class="modal-subtitle">Покупка Namcoins</p>
+            <h2><span id="modal-amount">1000</span> Namcoins</h2>
+          </div>
+        </div>
+
+        <button type="button" class="modal-close" id="modal-close">x</button>
+      </div>
+
+      <h3 class="form-title">Заполните форму</h3>
+
+      <form id="modal-form">
+        <input type="text" placeholder="Ваш никнейм" id="modal-nickname" required>
+        <input type="email" placeholder="Введите электронную почту" required>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="gift-checkbox"> 🎁 Покупаю в подарок другу
+        </label>
+
+        <label class="checkbox-label small-text">
+          <input type="checkbox" required> Я соглашаюсь с условиями
+        </label>
+
+        <button class="modal-pay-btn">Перейти к оплате</button>
+      </form>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
